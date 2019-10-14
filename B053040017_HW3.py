@@ -188,7 +188,7 @@ clf.score(X_test,y_test)
 # In[29]:
 
 
-mean_squared_error(y_test,gnb.predict(X_test))
+mean_squared_error(y_test,clf.predict(X_test))
 
 
 # In[30]:
@@ -198,8 +198,23 @@ plt.scatter(X_test.iloc[:,0], y_test.iloc[:,0], color='black')
 plt.scatter(X_test.iloc[:,0], clf.predict(X_test))
 
 
-# In[ ]:
+# In[31]:
 
 
+gnb = GaussianNB()
+gnb.fit(X_train, y_train)
+gnb.score(X_test,y_test)
 
+
+# In[32]:
+
+
+mean_squared_error(y_test,gnb.predict(X_test))
+
+
+# In[33]:
+
+
+plt.scatter(X_test.iloc[:,0], y_test.iloc[:,0], color='black')
+plt.scatter(X_test.iloc[:,0], gnb.predict(X_test))
 
